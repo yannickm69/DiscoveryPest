@@ -10,7 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    
+    var vcToLoad:String = "";
+    @IBOutlet weak var viewContainer: UIView!
     
     @IBOutlet weak var overlay: UIView!
     @IBOutlet weak var drawer: UIView!
@@ -21,6 +22,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         drawer.layer.borderWidth = 1
         drawer.layer.borderColor = UIColor.lightGray.cgColor
+        if vcToLoad != ""{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewUserViewController") as! NewUserViewController
+            viewContainer.addSubview(vc.view)
+        }
     }
     
     @IBAction func closeDrawer(_ sender: UISwipeGestureRecognizer) {

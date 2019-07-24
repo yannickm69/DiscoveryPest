@@ -11,7 +11,6 @@ import Alamofire
 
 class ChikdHomeViewController: UIViewController {
 
-    @IBOutlet weak var svcBtn: UIButton!
     @IBOutlet weak var serviceTypeLabel: UILabel!
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var warning: UILabel!
@@ -22,14 +21,21 @@ class ChikdHomeViewController: UIViewController {
     
     @IBOutlet weak var billing: UIView!
     @IBOutlet weak var myServices: UIView!
+    @IBOutlet weak var acctInfo: UIView!
+    @IBOutlet weak var schedService: UIView!
+    @IBOutlet weak var call: UIView!
+    
     
     let prefs = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(manageTouch))
-        myServices.addGestureRecognizer(gesture)
+
+        myServices.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(myServicesTap)))
+        billing.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(billingTap)))
+        acctInfo.addGestureRecognizer(UIGestureRecognizer(target:self,action: #selector(acctInfoTap)))
+        schedService.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(schedServiceTap)))
+        call.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(callTap)))
         
         //TODO set label from API call
         customerName.text = "NORMA"
@@ -91,18 +97,36 @@ class ChikdHomeViewController: UIViewController {
         
     }
     
-    @objc func manageTouch(_ sender: UITapGestureRecognizer) {
-        print("button clicked")
+    @objc func myServicesTap(_ sender: UITapGestureRecognizer) {
+        print("my services button clicked")
     }
     
-    /*
+    @objc func billingTap(_ sender: UITapGestureRecognizer) {
+        print("billing button clicked")
+    }
+    
+    @objc func acctInfoTap(_ sender: UITapGestureRecognizer) {
+        print("Acct Info button clicked")
+    }
+    
+    @objc func schedServiceTap(_ sender: UITapGestureRecognizer) {
+        print("sched seervice button clicked")
+    }
+    
+    @objc func callTap(_ sender: UITapGestureRecognizer) {
+        UIApplication.shared.open(URL(string: "tel://9256342221")!)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? HomeViewController{
+            vc.vcToLoad = "someVC"
+        }
     }
-    */
+    
 
 }
