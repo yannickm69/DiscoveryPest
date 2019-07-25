@@ -33,9 +33,9 @@ class ChikdHomeViewController: UIViewController {
 
         myServices.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(myServicesTap)))
         billing.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(billingTap)))
-        acctInfo.addGestureRecognizer(UIGestureRecognizer(target:self,action: #selector(acctInfoTap)))
-        schedService.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(schedServiceTap)))
-        call.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(callTap)))
+        acctInfo.addGestureRecognizer(UITapGestureRecognizer(target:self,action: #selector(acctInfoTap)))
+        schedService.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(schedServiceTap)))
+        call.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(callTap)))
         
         //TODO set label from API call
         customerName.text = "NORMA"
@@ -99,6 +99,7 @@ class ChikdHomeViewController: UIViewController {
     
     @objc func myServicesTap(_ sender: UITapGestureRecognizer) {
         print("my services button clicked")
+        performSegue(withIdentifier: "toService", sender: self)
     }
     
     @objc func billingTap(_ sender: UITapGestureRecognizer) {
@@ -107,6 +108,7 @@ class ChikdHomeViewController: UIViewController {
     
     @objc func acctInfoTap(_ sender: UITapGestureRecognizer) {
         print("Acct Info button clicked")
+        performSegue(withIdentifier: "backHome", sender: self)
     }
     
     @objc func schedServiceTap(_ sender: UITapGestureRecognizer) {
