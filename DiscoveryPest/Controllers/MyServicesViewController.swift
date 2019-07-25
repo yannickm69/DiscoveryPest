@@ -21,11 +21,10 @@ class MyServicesViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
-        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ServicesViewController") as! ServicesViewController
-        child1.childNumber = "One"
+        let child1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "svc") as! ServicesViewController
+                
+        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scs") as! ServiceCallsVC
         
-        let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ServicesViewController") as! ServicesViewController
-        child2.childNumber = "Two"
         
         return [child1, child2]
     }

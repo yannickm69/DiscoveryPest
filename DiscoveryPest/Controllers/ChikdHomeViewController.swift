@@ -25,6 +25,7 @@ class ChikdHomeViewController: UIViewController {
     @IBOutlet weak var schedService: UIView!
     @IBOutlet weak var call: UIView!
     
+    var selectedVC = ""
     
     let prefs = UserDefaults.standard
     
@@ -99,7 +100,9 @@ class ChikdHomeViewController: UIViewController {
     
     @objc func myServicesTap(_ sender: UITapGestureRecognizer) {
         print("my services button clicked")
-        performSegue(withIdentifier: "toService", sender: self)
+        //performSegue(withIdentifier: "toService", sender: self)
+        selectedVC = "mySvc"
+        performSegue(withIdentifier: "backHome", sender: self)
     }
     
     @objc func billingTap(_ sender: UITapGestureRecognizer) {
@@ -108,7 +111,7 @@ class ChikdHomeViewController: UIViewController {
     
     @objc func acctInfoTap(_ sender: UITapGestureRecognizer) {
         print("Acct Info button clicked")
-        performSegue(withIdentifier: "backHome", sender: self)
+        performSegue(withIdentifier: "toService", sender: self)
     }
     
     @objc func schedServiceTap(_ sender: UITapGestureRecognizer) {
@@ -126,7 +129,7 @@ class ChikdHomeViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let vc = segue.destination as? HomeViewController{
-            vc.vcToLoad = "someVC"
+            vc.vcToLoad = selectedVC
         }
     }
     

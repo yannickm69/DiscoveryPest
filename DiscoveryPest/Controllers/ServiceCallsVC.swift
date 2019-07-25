@@ -1,34 +1,25 @@
 //
-//  ServicesViewController.swift
+//  ServiceCallsVC.swift
 //  DiscoveryPest
 //
-//  Created by yannick mollard on 7/25/19.
+//  Created by user157258 on 7/25/19.
 //  Copyright © 2019 Gwenn&Du Apps. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class ServicesViewController: UIViewController, IndicatorInfoProvider {
+class ServiceCallsVC: UIViewController, IndicatorInfoProvider {
 
-    @IBOutlet weak var label: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "My Services")
+        return IndicatorInfo(title: "Service Calls")
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-  
-
     /*
     // MARK: - Navigation
 

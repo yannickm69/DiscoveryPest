@@ -23,8 +23,14 @@ class HomeViewController: UIViewController {
         drawer.layer.borderWidth = 1
         drawer.layer.borderColor = UIColor.lightGray.cgColor
         if vcToLoad != ""{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewUserViewController") as! NewUserViewController
-            viewContainer.addSubview(vc.view)
+            switch (vcToLoad) {
+            case "mySvc":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: vcToLoad) as! MyServicesViewController
+                viewContainer.addSubview(vc.view)
+            default:
+                break
+            }
+            
         }
     }
     

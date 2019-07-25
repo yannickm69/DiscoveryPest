@@ -757,7 +757,7 @@
         <!--My Services View Controller-->
         <scene sceneID="VKk-wi-RYB">
             <objects>
-                <viewController id="61A-6v-A67" customClass="MyServicesViewController" customModule="DiscoveryPest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mySvc" id="61A-6v-A67" customClass="MyServicesViewController" customModule="DiscoveryPest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aDx-3k-JNO"/>
                         <viewControllerLayoutGuide type="bottom" id="dYF-UB-bMo"/>
@@ -831,7 +831,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDE-km-kHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-930"/>
+            <point key="canvasLocation" x="934" y="-1044"/>
+        </scene>
+        <!--Service Calls-->
+        <scene sceneID="7H1-3K-Azb">
+            <objects>
+                <viewController storyboardIdentifier="scs" id="wiY-Fd-FFe" userLabel="Service Calls" customClass="ServiceCallsVC" customModule="DiscoveryPest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NGm-ED-H7L"/>
+                        <viewControllerLayoutGuide type="bottom" id="fmE-Aa-ak3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lVZ-Up-HAu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAI-X6-OBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-642"/>
         </scene>
     </scenes>
     <resources>

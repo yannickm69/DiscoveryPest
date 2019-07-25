@@ -6,7 +6,7 @@ target 'DiscoveryPest' do
   use_frameworks!
 
   # Pods for DiscoveryPest
-  pod 'MaterialComponents'
+  pod 'XLPagerTabStrip'
   pod 'Alamofire'
   pod 'SwiftyJSON'
 
