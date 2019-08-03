@@ -24,20 +24,43 @@ class HomeViewController: UIViewController {
         drawer.layer.borderColor = UIColor.lightGray.cgColor
         if vcToLoad != ""{
             switch (vcToLoad) {
-            case "mySvc":
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: vcToLoad) as! MyServicesViewController
-                viewContainer.addSubview(vc.view)
+            case "bvc":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: vcToLoad) as! BillingViewController
+                addChildView(childView: vc)
+            case "avc":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: vcToLoad) as! AccountInfoVC
+                addChildView(childView: vc)
+            case "schedvc":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: vcToLoad) as! SchedViewController
+                addChildView(childView: vc)
             default:
                 break
             }
             
         }
+
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeOpenDrawer))
+        swipe.direction = .right
+        self.view.addGestureRecognizer(swipe)
     }
-    
+
+    @objc func swipeOpenDrawer(){
+        if !drawerOpen{manageDrawer()}
+    }
+
+    //add vc
+    func addChildView(childView : UIViewController){
+        addChild(childView)
+        viewContainer.addSubview(childView.view)
+        childView.view.frame = viewContainer.frame
+        childView.didMove(toParent: self)
+    }
+
+    //MARK: - Drawer nav
     @IBAction func closeDrawer(_ sender: UISwipeGestureRecognizer) {
-        manageDrawer()
+        if drawerOpen{ manageDrawer()}
     }
-    
+
     fileprivate func manageDrawer() {
         if drawerOpen {
             leadingConstraint.constant = -250
@@ -82,11 +105,28 @@ class HomeViewController: UIViewController {
                 let webURL = NSURL(string: "https://www.facebook.com/Discovery-Pest-Control-127639957314232/")!
                 let application = UIApplication.shared
                 application.open(webURL as URL)
-                
+            case "Home":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "cvc") as! ChikdHomeViewController
+                addChildView(childView: vc)
+
+            case "Our Services":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
+                vc.url = "https://discoverypest.com/mobile/app_services.aspx"
+                addChildView(childView: vc)
+
+            case "Helpful Tips":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
+                vc.url = "https://discoverypest.com/mobile/app_tips.aspx"
+                addChildView(childView: vc)
+
+            case "About Us":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
+                vc.url = "https://discoverypest.com/mobile/app_about_us.aspx"
+                addChildView(childView: vc)
             default:
                 debugPrint(title.text ?? " ")
             }
-            
+            manageDrawer()
         }
         
     }

@@ -99,23 +99,22 @@ class ChikdHomeViewController: UIViewController {
     }
     
     @objc func myServicesTap(_ sender: UITapGestureRecognizer) {
-        print("my services button clicked")
-        //performSegue(withIdentifier: "toService", sender: self)
-        selectedVC = "mySvc"
-        performSegue(withIdentifier: "backHome", sender: self)
-    }
-    
-    @objc func billingTap(_ sender: UITapGestureRecognizer) {
-        print("billing button clicked")
-    }
-    
-    @objc func acctInfoTap(_ sender: UITapGestureRecognizer) {
-        print("Acct Info button clicked")
         performSegue(withIdentifier: "toService", sender: self)
     }
     
+    @objc func billingTap(_ sender: UITapGestureRecognizer) {
+        selectedVC = "bvc"
+        performSegue(withIdentifier: "backHome", sender: self)
+    }
+    
+    @objc func acctInfoTap(_ sender: UITapGestureRecognizer) {
+        selectedVC = "avc"
+        performSegue(withIdentifier: "backHome", sender: self)
+    }
+    
     @objc func schedServiceTap(_ sender: UITapGestureRecognizer) {
-        print("sched seervice button clicked")
+        selectedVC = "schedvc"
+        performSegue(withIdentifier: "backHome", sender: self)
     }
     
     @objc func callTap(_ sender: UITapGestureRecognizer) {

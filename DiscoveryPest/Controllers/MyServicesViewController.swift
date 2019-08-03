@@ -12,6 +12,14 @@ import XLPagerTabStrip
 class MyServicesViewController: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
+        settings.style.buttonBarBackgroundColor =  UIColor.white
+        settings.style.selectedBarBackgroundColor = UIColor.init(red: 1/255.0, green: 113/255.0, blue: 168/255.0, alpha: 1.0)
+        settings.style.selectedBarHeight = 3
+
+        settings.style.buttonBarItemBackgroundColor = UIColor.white
+        settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 12)
+        settings.style.buttonBarItemTitleColor = UIColor.black
+
         super.viewDidLoad()
         
         
@@ -25,8 +33,8 @@ class MyServicesViewController: ButtonBarPagerTabStripViewController {
                 
         let child2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scs") as! ServiceCallsVC
         
-        
-        return [child1, child2]
+        let child3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "act") as! ActivityViewController
+        return [child1, child2, child3]
     }
 
     /*
