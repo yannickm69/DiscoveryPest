@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CusomerInfo : Codable {
+class CustomerInfo : Codable {
     var mId : integer_t = 0
     var mCustomerCode : String = ""
     var mPropertyName = ""

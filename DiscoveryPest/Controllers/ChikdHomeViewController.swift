@@ -38,8 +38,7 @@ class ChikdHomeViewController: UIViewController {
         schedService.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(schedServiceTap)))
         call.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(callTap)))
         
-        //TODO set label from API call
-        customerName.text = "NORMA"
+        
         if NetworkReachabilityManager()!.isReachable{
             //Authenticate with server
             let user = prefs.string(forKey: "account") ?? "empty"
