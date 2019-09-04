@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    var logOff : Bool = false
     let prefs = UserDefaults.standard
     public static let BASEURL = "https://service.athenafirst.com/PublicWeb.svc/"
     
@@ -27,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
                
         //dismiss keyboard on touch
         self.view.addGestureRecognizer(UITapGestureRecognizer(target:self.view, action:#selector(UIView.endEditing(_:))))
@@ -36,8 +37,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         accountN.text = prefs.string(forKey: "account")
         password.text = prefs.string(forKey: "password")
         
-        //auto login
+        //auto login if not logging off
+        if(!logOff){
         _ = isUser()
+        }else{
+            //delete pass
+            prefs.set("", forKey: "password")
+            password.text = ""
+        }
+
         
     }
 

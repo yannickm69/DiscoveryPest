@@ -12,7 +12,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Login" customClass="ViewController" customModule="DiscoveryPest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lgv" id="BYZ-38-t0r" userLabel="Login" customClass="ViewController" customModule="DiscoveryPest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4L6-8F-4bk"/>
                         <viewControllerLayoutGuide type="bottom" id="3pK-2f-OD4"/>
@@ -141,8 +141,8 @@
                                     <constraint firstAttribute="width" secondItem="b7h-4N-0hJ" secondAttribute="height" multiplier="15:8" id="5WS-67-Pll"/>
                                 </constraints>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guy-k7-cpR">
-                                <rect key="frame" x="40" y="297.5" width="295" height="130"/>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guy-k7-cpR">
+                                <rect key="frame" x="40" y="297.5" width="295" height="140"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="tol-qD-iGt"/>
@@ -1567,14 +1567,14 @@
                                             <action selector="drawerPress:" destination="fLs-d3-bYV" eventType="touchUpInside" id="4x4-Me-5sj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-PK-dWu" userLabel="Setting">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-PK-dWu" userLabel="Logoff">
                                         <rect key="frame" x="24" y="337" width="168" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="cip-Gl-SS1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="titleEdgeInsets" minX="14" minY="4" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Settings" image="ic_settings">
+                                        <state key="normal" title="Log Off" image="ic_settings">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -2147,16 +2147,16 @@
                                 <rect key="frame" x="8" y="28" width="359" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bME-cY-tCr">
-                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-cu-sH4">
-                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Orq-7B-ejV">
-                                                <rect key="frame" x="0.0" y="14.5" width="134.5" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="139" height="35.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2165,16 +2165,16 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-ac-qFn">
-                                        <rect key="frame" x="154.5" y="0.0" width="135" height="50"/>
+                                        <rect key="frame" x="159" y="0.0" width="139" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLU-hz-2d9">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Pl2-qk-z52">
-                                                <rect key="frame" x="0.0" y="14.5" width="135" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="139" height="35.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2183,10 +2183,10 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eh6-fT-IuR">
-                                        <rect key="frame" x="309.5" y="0.0" width="49.5" height="50"/>
+                                        <rect key="frame" x="318" y="0.0" width="41" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjO-tY-MoU">
-                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="41" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="search"/>
@@ -2316,6 +2316,7 @@
         <image name="search" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="h5x-Rq-fls"/>
         <segue reference="ryI-Qd-uk8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -123,6 +123,11 @@ class HomeViewController: UIViewController {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "web") as! WebViewController
                 vc.url = "https://discoverypest.com/mobile/app_about_us.aspx"
                 addChildView(childView: vc)
+
+            case "Log Off":
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "lgv") as! ViewController
+                vc.logOff = true
+                self.present(vc, animated: true, completion: nil)
             default:
                 debugPrint(title.text ?? " ")
             }
