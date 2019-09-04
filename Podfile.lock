@@ -1,24 +1,24 @@
 PODS:
   - Alamofire (4.8.2)
-  - SwiftyJSON (5.0.0)
+  - FSCalendar (2.8.0)
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
   - Alamofire
-  - SwiftyJSON
+  - FSCalendar
   - XLPagerTabStrip
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - SwiftyJSON
+    - FSCalendar
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: 203c815f117a76f20992fae85c5f4badaf67bc89
+PODFILE CHECKSUM: 2c16fd034403ba08fc8c16d8dc0de74d2d1c2781
 
 COCOAPODS: 1.7.5

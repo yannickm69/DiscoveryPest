@@ -14,6 +14,7 @@ class BillingViewController: UIViewController {
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var payButton: UIButton!
     let prefs = UserDefaults.standard
+    @IBOutlet weak var busy: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,9 @@ class BillingViewController: UIViewController {
         getStatement()
         payButton.layer.borderWidth = 1.0
         payButton.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
+
+        busy.startAnimating()
+
     }
 
     func getStatement(){
@@ -42,6 +45,7 @@ class BillingViewController: UIViewController {
                     //convert to byte[] from base64 string
                     if let convertedData = Data(base64Encoded: data, options: .ignoreUnknownCharacters){
                         self.pdfView.document = PDFDocument(data: convertedData)
+                        self.busy.stopAnimating()
                     }
                 }
 

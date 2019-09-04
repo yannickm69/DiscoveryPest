@@ -64,6 +64,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             
+        }else{
+            let alert = UIAlertController(title: "Warning", message: "A network connection is required to use this App.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
         return result
     }

@@ -35,6 +35,7 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var bByEmail: UISwitch!
     @IBOutlet weak var cCard: UILabel!
     @IBOutlet weak var sendStatement: UISwitch!
+    @IBOutlet weak var submit: UIButton!
 
     let prefs = UserDefaults.standard
 
@@ -60,6 +61,11 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         bPhoneH.delegate = self
         bPhoneW.delegate = self
         bEmail.delegate = self
+
+        //round button
+        submit.layer.cornerRadius = 5
+        submit.addTarget(self, action: #selector(sendData(sender:)), for: .touchUpInside)
+        
 
         getData()
         // Do any additional setup after loading the view.
@@ -108,7 +114,6 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
                         self.email.text = currentService.mPropertyEmail
                         self.invoiceMemo.text = currentService.mInvoiceMemo
                         self.byMail.isOn = currentService.mNotifyPropertyMail
-                        self.byEmail.isOn = currentService.mNotifyPropertyEmail
                         self.bFullname.text = "\(currentService.mBillingName) \(currentService.mBillingLastName)"
                         self.bAddress1.text = currentService.mBillingAddress1
                         self.bAddress2.text = currentService.mBillingAddress2
@@ -120,7 +125,8 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
                         self.bEmail.text = currentService.mBillingEmail
                         self.bByMail.isOn = currentService.mNotifyBillingMail
                         self.bByEmail.isOn = currentService.mNotifyBillingEmail
-
+                        self.cCard.text = "\(currentService.mPaymentMethod) \(currentService.mCCCode) (Call 925-634-2221 to change your credit card on file.)"
+                        self.sendStatement.isOn = currentService.mEmailStatements.contains("True") ? true : false
                     }
 
                 }
@@ -129,6 +135,75 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
                 }
 
             }
+
+        }
+    }
+
+    // MARK - Send Data to Server
+    @objc func sendData(sender : UIButton){
+        if NetworkReachabilityManager()!.isReachable{
+            //Authenticate with server
+            let user = self.prefs.string(forKey: "account") ?? "empty"
+            let password = self.prefs.string(forKey: "password") ?? "empty"
+
+            var fullNameArr = self.fullName.text?.components(separatedBy: " ")
+            let firstName = fullNameArr?[0] ?? ""
+            let lastName = fullNameArr?.count ?? 0 > 1 ? fullNameArr?[1] : nil
+
+            var bFullNameArr = self.fullName.text?.components(separatedBy: " ")
+            let bFirstName = bFullNameArr?[0] ?? ""
+            let bLastName = bFullNameArr?.count ?? 0 > 1 ? bFullNameArr?[1] : nil
+
+
+                    let parameters : [String : Any] = [
+                    "mCustomerCode" : user,
+                    "mPropertyName" : firstName,
+                    "mPropertyLastName" : lastName ?? "",
+                    "mPropertyAddress1" : self.address1.text ?? "",
+                    "mPropertyAddress2" : self.address2.text ?? "",
+                    "mPropertyCity" : self.city.text ?? "",
+                    "mPropertyState" : self.state.text ?? "",
+                    "mPropertyZip" : self.zip.text ?? "",
+                    "mPropertyPhoneWork" : self.phoneW.text ?? "",
+                    "mPropertyPhoneHome" : self.phoneH.text ?? "",
+                    "mPropertyEmail" : self.email.text ?? "",
+                    "mInvoiceMemo" : self.invoiceMemo.text ?? "",
+                    "mBillingName" : bFirstName,
+                    "mBillingLastName" : bLastName ?? "",
+                    "mBillingAddress1" : self.bAddress1.text ?? "",
+                    "mBillingAddress2" : self.bAddress2.text ?? "",
+                    "mBillingCity" : self.bCity.text ?? "",
+                    "mBillingState" : self.bState.text ?? "",
+                    "mBillingZip" : self.bZip.text ?? "",
+                    "mBillingPhoneWork" : self.bPhoneW.text ?? "",
+                    "mBillingPhoneHome" : self.bPhoneH.text ?? "",
+                    "mBillingEmail" : self.bEmail.text ?? "",
+                    "mNotifyPropertyMail" : self.byMail?.isOn ?? false,
+                    "mNotifyPropertyEmail" : self.byEmail?.isOn ?? false,
+                    "mNotifyBillingEmail" : self.bByEmail?.isOn ?? false,
+                    "mNotifyBillingMail" : self.bByMail?.isOn ?? false,
+                    "mEmailStatements" : self.sendStatement.isOn ? "True" : "False"
+                ]
+
+
+                var headers : HTTPHeaders = [:]
+                if let authorizationheader = Request.authorizationHeader(user: user, password: password){
+                    headers[authorizationheader.key] = authorizationheader.value
+                }
+
+            Alamofire.request("\(ViewController.BASEURL)updateCustomer", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString{
+                    response in
+                    print(response)
+
+                      if response.result.isSuccess{
+                     let alertController = UIAlertController(title: "Profile Info", message:
+                     "Your request to update your information was submitted.", preferredStyle: .alert)
+                     alertController.addAction(UIAlertAction(title: "Close", style: .default))
+
+                     self.present(alertController, animated: true, completion: nil)
+                     }
+
+                }
 
         }
     }

@@ -24,11 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## SwiftyJSON
+## FSCalendar
 
-The MIT License (MIT)
-
-Copyright (c) 2017 Ruoyu Fu
+Copyright (c) 2013-2016 FSCalendar (https://github.com/WenchaoD/FSCalendar)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

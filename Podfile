@@ -8,6 +8,5 @@ target 'DiscoveryPest' do
   # Pods for DiscoveryPest
   pod 'XLPagerTabStrip'
   pod 'Alamofire'
-  pod 'SwiftyJSON'
-
+  pod 'FSCalendar'
 end
