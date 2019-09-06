@@ -136,16 +136,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Logo_black_letters" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-4N-0hJ">
-                                <rect key="frame" x="40" y="70" width="295" height="157.5"/>
+                                <rect key="frame" x="40" y="50" width="295" height="157.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b7h-4N-0hJ" secondAttribute="height" multiplier="15:8" id="5WS-67-Pll"/>
                                 </constraints>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guy-k7-cpR">
-                                <rect key="frame" x="40" y="297.5" width="295" height="140"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guy-k7-cpR">
+                                <rect key="frame" x="40" y="257.5" width="295" height="200"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="tol-qD-iGt"/>
+                                    <constraint firstAttribute="height" constant="200" id="tol-qD-iGt"/>
                                 </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -153,7 +153,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvQ-GT-dyw">
-                                <rect key="frame" x="114.5" y="257.5" width="146" height="32"/>
+                                <rect key="frame" x="114.5" y="217.5" width="146" height="32"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -162,7 +162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGB-ud-KJJ">
-                                <rect key="frame" x="170.5" y="443.5" width="34" height="30"/>
+                                <rect key="frame" x="170.5" y="473.5" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="toLogin" id="XUD-OT-ryP"/>
@@ -178,8 +178,8 @@
                             <constraint firstItem="guy-k7-cpR" firstAttribute="top" secondItem="FvQ-GT-dyw" secondAttribute="bottom" constant="8" id="Ozc-2S-s4p"/>
                             <constraint firstItem="lGB-ud-KJJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qhh-k7-8yU" secondAttribute="leading" id="S7M-zp-96s"/>
                             <constraint firstItem="lGB-ud-KJJ" firstAttribute="top" secondItem="guy-k7-cpR" secondAttribute="bottom" constant="16" id="Sl2-uI-fnq"/>
-                            <constraint firstItem="b7h-4N-0hJ" firstAttribute="top" secondItem="feV-Ic-ah3" secondAttribute="bottom" constant="50" id="cS3-xM-DaR"/>
-                            <constraint firstItem="FvQ-GT-dyw" firstAttribute="top" secondItem="b7h-4N-0hJ" secondAttribute="bottom" constant="30" id="hIj-ZG-8ae"/>
+                            <constraint firstItem="b7h-4N-0hJ" firstAttribute="top" secondItem="feV-Ic-ah3" secondAttribute="bottom" constant="30" id="cS3-xM-DaR"/>
+                            <constraint firstItem="FvQ-GT-dyw" firstAttribute="top" secondItem="b7h-4N-0hJ" secondAttribute="bottom" constant="10" id="hIj-ZG-8ae"/>
                             <constraint firstItem="guy-k7-cpR" firstAttribute="leading" secondItem="qhh-k7-8yU" secondAttribute="leading" constant="40" id="jZO-UM-486"/>
                             <constraint firstAttribute="trailing" secondItem="b7h-4N-0hJ" secondAttribute="trailing" constant="40" id="sAw-vr-dLD"/>
                             <constraint firstAttribute="trailing" secondItem="guy-k7-cpR" secondAttribute="trailing" constant="40" id="xwi-3X-aea"/>
@@ -2147,16 +2147,16 @@
                                 <rect key="frame" x="8" y="28" width="359" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bME-cY-tCr">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-cu-sH4">
-                                                <rect key="frame" x="0.0" y="0.0" width="139" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Orq-7B-ejV">
-                                                <rect key="frame" x="0.0" y="14.5" width="139" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="134.5" height="35.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2165,16 +2165,16 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-ac-qFn">
-                                        <rect key="frame" x="159" y="0.0" width="139" height="50"/>
+                                        <rect key="frame" x="154.5" y="0.0" width="135" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLU-hz-2d9">
-                                                <rect key="frame" x="0.0" y="0.0" width="139" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Date" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Pl2-qk-z52">
-                                                <rect key="frame" x="0.0" y="14.5" width="139" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="135" height="35.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2183,10 +2183,10 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eh6-fT-IuR">
-                                        <rect key="frame" x="318" y="0.0" width="41" height="50"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="49.5" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjO-tY-MoU">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="14" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="search"/>
@@ -2316,7 +2316,6 @@
         <image name="search" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h5x-Rq-fls"/>
         <segue reference="ryI-Qd-uk8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

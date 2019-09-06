@@ -22,8 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         prefs.set(accountN.text, forKey: "account")
         prefs.set(password.text, forKey: "password")
-        
-        performSegue(withIdentifier: "toHome", sender: self)
+        _ = isUser()
     }
     
     override func viewDidLoad() {
@@ -52,8 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK Networking
     func isUser () -> Bool{
-        let result : Bool = false
-        
+        var result : Bool = false
         if NetworkReachabilityManager()!.isReachable{
             //Authenticate with server
             let user = prefs.string(forKey: "account") ?? "empty"
@@ -68,6 +66,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 if let json = response.result.value as? Int  {
                     if json == 1 {
                         self.performSegue(withIdentifier: "toHome", sender: self)
+                    }else{
+                        let alert = UIAlertController(title: "Warning", message: "Invalid Account or password. ", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true)
                     }
                 }
             }
@@ -76,6 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let alert = UIAlertController(title: "Warning", message: "A network connection is required to use this App.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
+            result = false
         }
         return result
     }
