@@ -146,11 +146,11 @@ class AccountInfoVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             let user = self.prefs.string(forKey: "account") ?? "empty"
             let password = self.prefs.string(forKey: "password") ?? "empty"
 
-            var fullNameArr = self.fullName.text?.components(separatedBy: " ")
+            let fullNameArr = self.fullName.text?.components(separatedBy: " ")
             let firstName = fullNameArr?[0] ?? ""
             let lastName = fullNameArr?.count ?? 0 > 1 ? fullNameArr?[1] : nil
 
-            var bFullNameArr = self.fullName.text?.components(separatedBy: " ")
+            let bFullNameArr = self.fullName.text?.components(separatedBy: " ")
             let bFirstName = bFullNameArr?[0] ?? ""
             let bLastName = bFullNameArr?.count ?? 0 > 1 ? bFullNameArr?[1] : nil
 
